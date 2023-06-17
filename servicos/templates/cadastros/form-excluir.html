@@ -1,0 +1,35 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+
+{% block conteudo %}
+<header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Excluir Registros</h1>
+                <p class="lead">
+                    Confirme para excluir o registro definitivamente.
+                </p>
+
+                <br>
+
+                <form action="" method="POST">
+
+                    <p>
+                        Deseja excluir o registro: <strong>{{ object.nome }}</strong>?
+                    </p>
+
+
+                    {% csrf_token %}
+
+                    {{ form.as_p}}
+
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
